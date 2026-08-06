@@ -8,6 +8,11 @@ DEMOS = [
         'desc': 'Перебор списка в шаблоне: forloop.counter/first/last и {% empty %}.',
         'url': '/demo/for/',
     },
+    {
+        'title': 'demo_static — свои static-файлы',
+        'desc': 'Свой CSS и картинка через {% load static %} и {% static %} (не CDN).',
+        'url': '/demo/static/',
+    },
 ]
 
 

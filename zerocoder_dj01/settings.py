@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dj02.apps.Dj02Config',
     'demo_for.apps.DemoForConfig',  # демо {% for %} (только ветка demo)
     'demo.apps.DemoConfig',         # раздел «Демо» — хаб объяснений (только ветка demo)
+    'demo_static.apps.DemoStaticConfig',  # демо статики (только ветка demo)
 ]
 
 MIDDLEWARE = [

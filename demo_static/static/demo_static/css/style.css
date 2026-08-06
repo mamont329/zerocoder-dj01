@@ -1,0 +1,26 @@
+/* Наш СОБСТВЕННЫЙ файл статики.
+   Django отдаёт его "как есть" — не рендерит, не подставляет переменные.
+   Лежит в demo_static/static/demo_static/css/style.css */
+
+.static-demo-card {
+    max-width: 520px;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-radius: 16px;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.static-demo-card h3 {
+    margin-top: .5rem;
+}
+
+.static-demo-badge {
+    display: inline-block;
+    padding: .25rem .7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .25);
+    font-size: .85rem;
+}
