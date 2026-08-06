@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'dj01.apps.Dj01Config',
     'dj02.apps.Dj02Config',
+    'demo_for.apps.DemoForConfig',  # ВРЕМЕННОЕ демо {% for %} — удалить после показа
 ]
 
 MIDDLEWARE = [
