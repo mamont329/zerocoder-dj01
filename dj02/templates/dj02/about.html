@@ -1,0 +1,14 @@
+{% extends 'dj02/base.html' %}
+
+{% block title %}О нас — DJ02{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">О нас</h1>
+<p class="lead">Мы — учебная команда, изучающая Django на курсе Zerocoder.</p>
+<p>
+    Эта страница собрана из общего каркаса: меню и подвал подключены через
+    <code>{% verbatim %}{% include %}{% endverbatim %}</code>,
+    а её содержимое подставлено в блок
+    <code>{% verbatim %}{% block content %}{% endverbatim %}</code>.
+</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'dj02/base.html' %}
+
+{% block title %}Главная — DJ02{% endblock %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Добро пожаловать!</h1>
+        <p class="col-md-8 fs-4">
+            Это главная страница учебного сайта на Django.
+            Все страницы собраны из одного каркаса base.html с меню, подвалом и Bootstrap.
+        </p>
+        <a href="{% url 'dj02:services' %}" class="btn btn-primary btn-lg">Наши услуги</a>
+    </div>
+</div>
+{% endblock %}

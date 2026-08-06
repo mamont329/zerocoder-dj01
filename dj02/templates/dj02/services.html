@@ -1,0 +1,33 @@
+{% extends 'dj02/base.html' %}
+
+{% block title %}Услуги — DJ02{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Услуги</h1>
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Разработка</h5>
+                <p class="card-text">Создаём сайты и веб-приложения на Django.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Дизайн</h5>
+                <p class="card-text">Оформляем интерфейсы с помощью Bootstrap.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Поддержка</h5>
+                <p class="card-text">Сопровождаем проект после запуска.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
