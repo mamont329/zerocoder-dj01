@@ -1,0 +1,30 @@
+{% extends 'dj04/base.html' %}
+
+{% block title %}Добавить фильм — DJ04{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Добавить фильм</h1>
+
+<div class="row">
+    <div class="col-lg-8">
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% for e in field.errors %}
+                <div class="text-danger small mt-1">{{ e }}</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a href="{% url 'dj04:film_list' %}" class="btn btn-outline-secondary">Отмена</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
