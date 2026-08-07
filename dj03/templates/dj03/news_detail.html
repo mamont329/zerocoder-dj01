@@ -1,0 +1,21 @@
+{% extends 'dj03/base.html' %}
+
+{% block title %}{{ post.title }} — DJ03{% endblock %}
+
+{% block content %}
+<article>
+    <h1 class="mb-2">{{ post.title }}</h1>
+
+    <p class="text-secondary mb-4">
+        <i class="bi bi-calendar3"></i> {{ post.pub_date|date:"d.m.Y H:i" }}
+        &nbsp;·&nbsp;
+        <i class="bi bi-person"></i> {{ post.author }}
+    </p>
+
+    <p class="lead">{{ post.short_description }}</p>
+
+    <div class="mt-3">{{ post.text|linebreaks }}</div>
+</article>
+
+<a href="{% url 'dj03:news_list' %}" class="btn btn-outline-secondary mt-4">← ко всем новостям</a>
+{% endblock %}

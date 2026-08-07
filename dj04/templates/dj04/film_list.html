@@ -1,0 +1,33 @@
+{% extends 'dj04/base.html' %}
+
+{% block title %}Фильмы — DJ04{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="mb-0">Фильмы</h1>
+    <a href="{% url 'dj04:film_add' %}" class="btn btn-primary">
+        <i class="bi bi-plus-lg"></i> Добавить фильм
+    </a>
+</div>
+
+<div class="row g-4">
+    {% for film in films %}
+    <div class="col-md-6">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">{{ film.title }}</h5>
+                <p class="card-text">{{ film.description }}</p>
+                <hr>
+                <p class="card-text mb-0"><strong>Отзыв:</strong> {{ film.review }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <div class="alert alert-warning mb-0">
+            Фильмов пока нет. <a href="{% url 'dj04:film_add' %}">Добавить первый</a>.
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
