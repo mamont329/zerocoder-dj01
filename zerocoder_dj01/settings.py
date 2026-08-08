@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dj03.apps.Dj03Config',
     'dj04.apps.Dj04Config',
     'dj05_1.apps.Dj051Config',
+    'dj05_2.apps.Dj052Config',
 ]
 
 MIDDLEWARE = [

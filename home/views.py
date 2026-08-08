@@ -27,6 +27,11 @@ LESSONS = [
         'desc': 'Аутентификация: маршруты и страницы (index, profile, login, logout), навигация.',
         'url': '/dj05_1/',
     },
+    {
+        'title': 'Урок DJ05 · задание 2',
+        'desc': 'Регистрация (UserCreationForm) + профиль только для авторизованных (LoginRequiredMixin).',
+        'url': '/dj05_2/',
+    },
 ]
 
 
