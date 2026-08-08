@@ -26,6 +26,7 @@ urlpatterns = [
     path('dj04/', include('dj04.urls')),
     path('dj05_1/', include('dj05_1.urls')),
     path('dj05_2/', include('dj05_2.urls')),
+    path('dj05_3/', include('dj05_3.urls')),      # Profile-версия — только ветка demo
     path('demo/', include('demo.urls')),          # раздел «Демо» (хаб) — только ветка demo
     path('demo/for/', include('demo_for.urls')),  # демка про {% for %} — только ветка demo
     path('demo/static/', include('demo_static.urls')),  # демка про static — только ветка demo

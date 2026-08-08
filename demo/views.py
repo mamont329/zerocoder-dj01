@@ -13,6 +13,11 @@ DEMOS = [
         'desc': 'Свой CSS и картинка через {% load static %} и {% static %} (не CDN).',
         'url': '/demo/static/',
     },
+    {
+        'title': 'dj05_3 — Profile вместо CustomUser',
+        'desc': 'Расширение пользователя через OneToOne Profile: user.profile.phone_number.',
+        'url': '/dj05_3/',
+    },
 ]
 
 

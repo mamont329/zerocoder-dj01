@@ -1,0 +1,20 @@
+{% extends 'dj05_3/base.html' %}
+
+{% block title %}Профиль — DJ05_3 (Profile){% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Профиль</h1>
+<p class="text-secondary">Доступно только авторизованным (@login_required).</p>
+<ul class="list-group">
+    <li class="list-group-item">Имя пользователя: <strong>{{ user.username }}</strong> <span class="text-secondary">(из User)</span></li>
+    <li class="list-group-item">Email: {{ user.email|default:"—" }} <span class="text-secondary">(из User)</span></li>
+    {% if user.profile %}
+        <li class="list-group-item">
+            Телефон: {{ user.profile.phone_number|default:"—" }}
+            <span class="text-secondary">(из <code>user.profile</code> — OneToOne)</span>
+        </li>
+    {% else %}
+        <li class="list-group-item text-secondary">Profile (OneToOne) для этого пользователя не создан</li>
+    {% endif %}
+</ul>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'dj05_3/base.html' %}
+
+{% block title %}Главная — DJ05_3 (Profile){% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Profile-версия задания 3</h1>
+<p class="lead">
+    Тот же результат (email + телефон у пользователя), но через отдельную модель
+    <code>Profile</code> (OneToOne), а не через кастомный User.
+</p>
+<div class="alert alert-info">
+    Здесь стандартный <code>User</code> НЕ переопределялся. Телефон живёт в
+    <code>Profile</code> и доступен как <code>user.profile.phone_number</code>.
+</div>
+{% if user.is_authenticated %}
+    <p>Вы вошли как <strong>{{ user.username }}</strong>. <a href="{% url 'dj05_3:profile' %}">Профиль</a>.</p>
+{% else %}
+    <p><a href="{% url 'dj05_3:register' %}">Зарегистрироваться</a> или <a href="{% url 'dj05_3:login' %}">войти</a>.</p>
+{% endif %}
+{% endblock %}
