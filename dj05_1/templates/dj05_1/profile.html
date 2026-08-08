@@ -1,0 +1,18 @@
+{% extends 'dj05_1/base.html' %}
+
+{% block title %}Профиль — DJ05_1{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Профиль</h1>
+{% if user.is_authenticated %}
+    <ul class="list-group">
+        <li class="list-group-item">Имя пользователя: <strong>{{ user.username }}</strong></li>
+        <li class="list-group-item">Email: {{ user.email|default:"—" }}</li>
+        <li class="list-group-item">Статус: {% if user.is_staff %}сотрудник{% else %}обычный пользователь{% endif %}</li>
+    </ul>
+{% else %}
+    <div class="alert alert-warning mb-0">
+        Вы не авторизованы. <a href="{% url 'dj05_1:login' %}">Войти</a>.
+    </div>
+{% endif %}
+{% endblock %}

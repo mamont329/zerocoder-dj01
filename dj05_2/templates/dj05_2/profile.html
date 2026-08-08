@@ -1,0 +1,13 @@
+{% extends 'dj05_2/base.html' %}
+
+{% block title %}Профиль — DJ05_2{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Профиль</h1>
+<p class="text-secondary">Эта страница доступна только авторизованным (LoginRequiredMixin).</p>
+<ul class="list-group">
+    <li class="list-group-item">Имя пользователя: <strong>{{ user.username }}</strong></li>
+    <li class="list-group-item">Email: {{ user.email|default:"—" }}</li>
+    <li class="list-group-item">Дата регистрации: {{ user.date_joined|date:"d.m.Y H:i" }}</li>
+</ul>
+{% endblock %}
