@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Профиль — DJ05_3{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Профиль</h1>
+<p class="text-secondary">Доступно только авторизованным (LoginRequiredMixin).</p>
+<ul class="list-group">
+    <li class="list-group-item">Имя пользователя: <strong>{{ user.username }}</strong></li>
+    <li class="list-group-item">Email: {{ user.email }}</li>
+    <li class="list-group-item">Телефон: {{ user.phone_number|default:"—" }}</li>
+</ul>
+{% endblock %}

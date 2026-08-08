@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная — DJ05_3{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">Главная</h1>
+<p class="lead">Задание 3: кастомная модель пользователя <code>CustomUser</code> (email + телефон).</p>
+{% if user.is_authenticated %}
+    <p>Вы вошли как <strong>{{ user.username }}</strong>. Перейти в <a href="{% url 'profile' %}">профиль</a>.</p>
+{% else %}
+    <p><a href="{% url 'register' %}">Зарегистрироваться</a> или <a href="{% url 'login' %}">войти</a>.</p>
+{% endif %}
+{% endblock %}
