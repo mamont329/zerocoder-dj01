@@ -1,0 +1,25 @@
+{% extends 'dj05_1/base.html' %}
+
+{% block title %}Вход — DJ05_1{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Вход</h1>
+<div class="row">
+    <div class="col-lg-5">
+        {% if form.errors %}
+        <div class="alert alert-danger">Неверное имя пользователя или пароль.</div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{% url 'dj05_1:profile' %}">
+            {% for field in form %}
+            <div class="mb-3">
+                <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

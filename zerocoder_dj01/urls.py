@@ -24,4 +24,5 @@ urlpatterns = [
     path('dj02/', include('dj02.urls')),
     path('dj03/', include('dj03.urls')),
     path('dj04/', include('dj04.urls')),
+    path('dj05_1/', include('dj05_1.urls')),
 ]
