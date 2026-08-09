@@ -44,6 +44,32 @@ def start(message):
         bot.reply_to(message, f'❌ Ошибка регистрации (код {resp.status_code}).')
 
 
+@bot.message_handler(commands=['myinfo'])
+def myinfo(message):
+    tg_id = message.from_user.id
+    # GET-запрос к API за данными пользователя
+    try:
+        resp = requests.get(f'{API_URL}/user/{tg_id}/', timeout=5)
+    except requests.RequestException:
+        bot.reply_to(message, '⚠️ Сервер недоступен, попробуйте позже.')
+        return
+
+    if resp.status_code == 200:
+        u = resp.json()
+        bot.reply_to(
+            message,
+            'Ваши данные:\n'
+            f'ID: {u["telegram_id"]}\n'
+            f'Имя: {u["username"]}\n'
+            f'Регистрация: {u["created_at"][:10]}'
+        )
+    elif resp.status_code == 404:
+        # обработка ошибки: пользователь не зарегистрирован
+        bot.reply_to(message, 'Вы ещё не зарегистрированы. Отправьте /start.')
+    else:
+        bot.reply_to(message, f'❌ Ошибка ({resp.status_code}).')
+
+
 if __name__ == '__main__':
     print('Бот запущен, ждёт сообщений...')
     bot.infinity_polling()

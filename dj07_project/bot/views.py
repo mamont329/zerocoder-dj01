@@ -27,3 +27,15 @@ def register(request):
         {'status': 'created', 'user': serializer.data},
         status=status.HTTP_201_CREATED,
     )
+
+
+@api_view(['GET'])
+def user_info(request, telegram_id):
+    """Данные пользователя по telegram_id: GET /api/user/<telegram_id>/."""
+    user = TelegramUser.objects.filter(telegram_id=telegram_id).first()
+    if user is None:
+        return Response(
+            {'error': 'Пользователь не зарегистрирован'},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+    return Response(TelegramUserSerializer(user).data, status=status.HTTP_200_OK)
